@@ -19,6 +19,7 @@ RUN yum install -y \
 RUN usermod -u ${USER_ID} ftp
 RUN groupmod -g ${GROUP_ID} ftp
 
+ENV FTP_USERS **String**
 ENV FTP_USER **String**
 ENV FTP_PASS **Random**
 ENV PASV_ADDRESS **IPv4**
@@ -34,7 +35,7 @@ ENV REVERSE_LOOKUP_ENABLE YES
 ENV PASV_PROMISCUOUS NO
 ENV PORT_PROMISCUOUS NO
 
-COPY vsftpd.conf /etc/vsftpd/
+COPY vsftpd.conf /etc/vsftpd/vsftpd.conf.backup
 COPY vsftpd_virtual /etc/pam.d/
 COPY run-vsftpd.sh /usr/sbin/
 
