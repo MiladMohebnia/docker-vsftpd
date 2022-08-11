@@ -34,6 +34,7 @@ ENV LOCAL_UMASK 077
 ENV REVERSE_LOOKUP_ENABLE YES
 ENV PASV_PROMISCUOUS NO
 ENV PORT_PROMISCUOUS NO
+ENV CMDS_DENIED ""
 
 COPY vsftpd.conf /etc/vsftpd/vsftpd.conf.backup
 COPY vsftpd_virtual /etc/pam.d/
